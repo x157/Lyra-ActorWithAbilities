@@ -9,9 +9,9 @@
 #include "Log/XCLLog.h"
 
 
-const FName AXCLActorWithAbilitiesAndHealth::CombatSetName             = TEXT("CombatSet");
-const FName AXCLActorWithAbilitiesAndHealth::HealthComponentName       = TEXT("HealthComponent");
-const FName AXCLActorWithAbilitiesAndHealth::HealthSetName             = TEXT("HealthSet");
+const FName AXCLActorWithAbilitiesAndHealth::CombatSetName       = TEXT("CombatSet");
+const FName AXCLActorWithAbilitiesAndHealth::HealthComponentName = TEXT("HealthComponent");
+const FName AXCLActorWithAbilitiesAndHealth::HealthSetName       = TEXT("HealthSet");
 
 
 AXCLActorWithAbilitiesAndHealth::AXCLActorWithAbilitiesAndHealth(const FObjectInitializer& ObjectInitializer)

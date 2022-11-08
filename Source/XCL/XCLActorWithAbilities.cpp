@@ -8,7 +8,7 @@
 #include "Log/XCLLog.h"
 
 
-const FName AXCLActorWithAbilities::AbilitySystemComponentName     = TEXT("AbilitySystemComponent");
+const FName AXCLActorWithAbilities::AbilitySystemComponentName = TEXT("AbilitySystemComponent");
 
 
 AXCLActorWithAbilities::AXCLActorWithAbilities(const FObjectInitializer& ObjectInitializer)

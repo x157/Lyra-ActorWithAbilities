@@ -13,10 +13,10 @@ void UXCLTargetDummyHealthSet::PreAttributeChange(const FGameplayAttribute& Attr
 {
 	Super::PreAttributeChange(Attribute, NewValue);
 
-	if (Attribute == GetHealthAttribute())
+	if (Attribute == GetHealthAttribute() && NewValue < 1.f)
 	{
 		// Do not allow Health to drop below 1
-		NewValue = FMath::Max(NewValue, 1.0f);
+		NewValue = 1.f;
 	}
 }
 
@@ -25,9 +25,9 @@ void UXCLTargetDummyHealthSet::PreAttributeBaseChange(const FGameplayAttribute& 
 {
 	Super::PreAttributeBaseChange(Attribute, NewValue);
 
-	if (Attribute == GetHealthAttribute())
+	if (Attribute == GetHealthAttribute() && NewValue < 1.f)
 	{
 		// Do not allow Health to drop below 1
-		NewValue = FMath::Max(NewValue, 1.0f);
+		NewValue = 1.f;
 	}
 }
