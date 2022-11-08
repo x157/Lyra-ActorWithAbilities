@@ -1,0 +1,37 @@
+# Annoying MS HoloLens config dir I'm not using that keeps creating itself
+Config/HoloLens
+Platforms/HoloLens
+
+# Definitely don't want any generated build files
+Build/Scripts/obj/*
+Build/**/*.cache
+Build/**/*.json
+Build/**/*.csproj.props
+Build/**/*.csproj.*.props
+
+# Built data for maps
+*_BuiltData.uasset
+
+Binaries
+DerivedDataCache
+Intermediate
+Plugins/Developer/*
+Plugins/*/Binaries
+Plugins/*/DerivedDataCache
+Plugins/*/Intermediate
+Plugins/*/Saved
+Saved
+
+.vscode
+.vsconfig
+.vs
+.idea
+
+*.VC.db
+*.opensdf
+*.opendb
+*.sdf
+*.sln
+*.suo
+*.xcodeproj
+*.xcworkspace
