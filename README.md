@@ -10,7 +10,7 @@ I copied some of my `XCL` classes to this repo purely to show **an example** of 
 This is not intended to be cut/paste code that solves your problem for you.
 Instead, it is intended to be an example you can read in order to create your own classes.
 
-This references `XCL_ALOG` and other logging macros that exist in my `XCL` project that you will
+This references `XCL_ADEBUG` and other logging macros that exist in my `XCL` project that you will
 not have access to.  Modify these to be your own logging macros as appropriate.
 
 This also references `UXCLAbilitySystemComponent` which you will not have.  You should instead
