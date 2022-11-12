@@ -20,3 +20,8 @@ The added functionality of `XCL` ASC is not required, but the `Lyra` ASC is defi
 as we are calling Lyra stuff in this code.  (In particular, the `HealthComponent` requires
 access to a `Lyra` ASC).
 
+## Example Log Macros
+
+For an example of how to do good C++ log macros, see my Dev Notes:
+
+[https://x157.github.io/UE5/Dev/DebuggingTips#XistLogFormat](https://x157.github.io/UE5/Dev/DebuggingTips#XistLogFormat)
