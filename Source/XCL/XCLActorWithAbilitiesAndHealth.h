@@ -1,4 +1,7 @@
 // Copyright 2022 xist.gg
+//
+// THIS CODE WILL NOT COMPILE
+// See README for more info: https://github.com/x157/Lyra-ActorWithAbilities
 
 #pragma once
 
@@ -34,11 +37,12 @@ protected:
 	//~End of AXCLActorWithAbilities implementation
 
 public:
+	// Public Static Component Names
 	static const FName CombatSetName;
 	static const FName HealthComponentName;
 	static const FName HealthSetName;
 
-private:
+protected:
 	/**
 	 * Lyra "Combat Set" is required by Lyra Healing & Damage Effect Calculations.
 	 *
@@ -51,7 +55,7 @@ private:
 	 *
 	 * Override as needed.
 	 */
-	UPROPERTY(EditAnywhere, Category="XCL|Ability")
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="XCL|Ability")
 	TObjectPtr<ULyraCombatSet> CombatSet;
 
 	/**
@@ -62,7 +66,7 @@ private:
 	 * You probably want to derive your own class from this to add your custom
 	 * attributes to this one.
 	 */
-	UPROPERTY(EditAnywhere, Category="XCL|Ability")
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="XCL|Ability")
 	TObjectPtr<ULyraHealthSet> HealthSet;
 
 	/**
@@ -74,7 +78,7 @@ private:
 	 * This component also seems to be what is responsible for handling the
 	 * death of an Actor via network replication.
 	 */
-	UPROPERTY(EditAnywhere, Category="XCL|Ability")
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="XCL|Ability")
 	TObjectPtr<ULyraHealthComponent> HealthComponent;
 
 };

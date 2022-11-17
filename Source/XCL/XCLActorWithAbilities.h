@@ -1,4 +1,7 @@
 // Copyright 2022 xist.gg
+//
+// THIS CODE WILL NOT COMPILE
+// See README for more info: https://github.com/x157/Lyra-ActorWithAbilities
 
 #pragma once
 
@@ -61,6 +64,7 @@ public:
 	//~End IAbilitySystemComponent interface
 
 public:
+	// Public Static Const Component Names
 	static const FName AbilitySystemComponentName;
 
 private:

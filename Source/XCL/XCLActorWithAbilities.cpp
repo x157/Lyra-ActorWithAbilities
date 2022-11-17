@@ -1,4 +1,7 @@
 // Copyright 2022 xist.gg
+//
+// THIS CODE WILL NOT COMPILE
+// See README for more info: https://github.com/x157/Lyra-ActorWithAbilities
 
 #include "XCLActorWithAbilities.h"
 
@@ -28,8 +31,10 @@ AXCLActorWithAbilities::AXCLActorWithAbilities(const FObjectInitializer& ObjectI
 
 void AXCLActorWithAbilities::PostInitializeComponents()
 {
+	// BEFORE PostInit Components:
 	InitializeAbilitySystem();
 
+	// Now during PostInit Components, there is a functional ASC for other components to use
 	Super::PostInitializeComponents();
 }
 
@@ -56,7 +61,7 @@ void AXCLActorWithAbilities::InitializeAbilitySystem()
 	{
 		XCL_ADEBUG(DEBUG_Abilities, TEXT("Granting OnSpawn Ability Set [%s]"), *GetNameSafe(AbilitySetOnSpawn));
 
-		AbilitySetOnSpawn->GiveToAbilitySystem(AbilitySystemComponent, &GrantedHandlesOnSpawn, nullptr);
+		AbilitySetOnSpawn->GiveToAbilitySystem(AbilitySystemComponent, &GrantedHandlesOnSpawn);
 	}
 }
 

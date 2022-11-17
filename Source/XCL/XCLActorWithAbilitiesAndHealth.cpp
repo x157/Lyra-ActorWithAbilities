@@ -1,4 +1,7 @@
 // Copyright 2022 xist.gg
+//
+// THIS CODE WILL NOT COMPILE
+// See README for more info: https://github.com/x157/Lyra-ActorWithAbilities
 
 #include "Ability/XCLActorWithAbilitiesAndHealth.h"
 
@@ -26,6 +29,7 @@ AXCLActorWithAbilitiesAndHealth::AXCLActorWithAbilitiesAndHealth(const FObjectIn
 
 void AXCLActorWithAbilitiesAndHealth::InitializeAbilitySystem()
 {
+	// Super::InitializeAbilitySystem is required to get the ASC working, do this first:
 	Super::InitializeAbilitySystem();
 
 	// HealthComponent requires a Lyra based ASC
@@ -37,9 +41,6 @@ void AXCLActorWithAbilitiesAndHealth::InitializeAbilitySystem()
 
 	// DO NOT init HealthComponent until AFTER HealthSet has been added
 	HealthComponent->InitializeWithAbilitySystem(ASC);
-
-	XCL_ALOG(TEXT("Initialize Ability Actor Health [%s] %.1f/%.1f"),
-		*GetNameSafe(this), HealthComponent->GetHealth(), HealthComponent->GetMaxHealth());
 }
 
 
