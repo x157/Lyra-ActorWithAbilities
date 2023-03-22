@@ -39,6 +39,19 @@ void AXCLActorWithAbilities::PostInitializeComponents()
 }
 
 
+void AXCLActorWithAbilities::BeginPlay()
+{
+	Super::BeginPlay();
+
+	if (HasAuthority() && AbilitySetOnSpawn)
+	{
+		XCL_ADEBUG(DEBUG_Abilities, TEXT("Granting OnSpawn Ability Set [%s]"), *GetNameSafe(AbilitySetOnSpawn));
+
+		AbilitySetOnSpawn->GiveToAbilitySystem(AbilitySystemComponent, &GrantedHandlesOnSpawn);
+	}
+}
+
+
 void AXCLActorWithAbilities::EndPlay(const EEndPlayReason::Type EndPlayReason)
 {
 	UninitializeAbilitySystem();
@@ -56,13 +69,6 @@ void AXCLActorWithAbilities::InitializeAbilitySystem()
 
 	// Initialize ASC on this Actor
 	AbilitySystemComponent->InitAbilityActorInfo(this, this);
-
-	if (HasAuthority() && AbilitySetOnSpawn)
-	{
-		XCL_ADEBUG(DEBUG_Abilities, TEXT("Granting OnSpawn Ability Set [%s]"), *GetNameSafe(AbilitySetOnSpawn));
-
-		AbilitySetOnSpawn->GiveToAbilitySystem(AbilitySystemComponent, &GrantedHandlesOnSpawn);
-	}
 }
 
 
